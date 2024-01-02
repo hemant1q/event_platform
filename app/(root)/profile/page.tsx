@@ -16,6 +16,7 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
 
   const organizedEvents = await getEventsByUser({ userId, page: eventsPage });
 
+
   return (
     <>
       {/* My Tickets */}
@@ -30,18 +31,18 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
 
       {/* <section className="wrapper my-8">
         <Collection
-          data={orderedEvents}
+          data={orderedEvents?.data}
           emptyTitle="No event tickets purchased yet"
-          emptyStateSubtext="No worries - plenty of exciting events to explore!"
+          emptyStateSubText="No worries - plenty of exciting events to explore!"
           collectionType="My_Tickets"
           limit={3}
           page={ordersPage}
           urlParamName="ordersPage"
           totalPages={orders?.totalPages}
         />
-      </section>
+      </section> */}
 
-     Events Organized */}
+      {/* Events Organized */}
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between">
           <h3 className="h3-bold text-center sm:text-left">Events Organized</h3>
@@ -55,7 +56,7 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
         <Collection
           data={organizedEvents?.data}
           emptyTitle="No events have been created yet"
-          emptyStateSubText="Go create some now"
+          emptyStateSubText="Go create some noCw"
           collectionType="Events_Organized"
           limit={3}
           page={eventsPage}

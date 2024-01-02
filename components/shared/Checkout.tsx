@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { Button } from "../ui/button";
 import { IEvent } from "@/lib/database/models/event.model";
-
 import { loadStripe } from "@stripe/stripe-js";
-import { checkoutOrder } from "@/lib/actions/order.action";
+import { checkoutOrder } from "@/lib/actions/order.actions";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -23,7 +22,6 @@ const Checkout = ({ event, userId }: { event: IEvent; userId: string }) => {
       );
     }
   }, []);
-
   const onCheckout = async () => {
     const order = {
       eventTitle: event.title,
